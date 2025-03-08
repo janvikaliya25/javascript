@@ -1,4 +1,6 @@
 
+
+
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault()
   let a = document.querySelector("input").value;
@@ -13,15 +15,16 @@ function view(a){
       )
         .then((res) => res.json())
         .then((res) => {
-          console.log(res)
           document.getElementById("box").innerHTML=`
             
             <div id="info">
-            <div id="i">
+            <div>
+            <h4>${res.name}</h4>
+            <h5>${res.main.temp}</h5>
+            <p>${res.weather[0].description}</p>
+            </div>
+            <div>
             <img src="https://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png" alt="">
-            <h1>${res.main.temp} °C</h1>
-             <p>${res.weather[0].description}</p>
-            <p><i class="fa-solid fa-location-dot"></i> ${res.name}</p>
             </div>
         </div>   
           `
