@@ -1,6 +1,4 @@
 
-
-
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault()
   let a = document.querySelector("input").value;
