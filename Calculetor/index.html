@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          darkMode: 'class',
+        }
+      </script>
+      <style>
+        .fade-in {
+          animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4 transition-colors duration-300">
+    <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-xl w-full max-w-[360px] sm:max-w-[400px] md:max-w-[420px] lg:max-w-[450px] xl:max-w-[480px] fade-in transition duration-300">
+        <div class="flex justify-between items-center mb-3">
+            <span class="text-gray-900 dark:text-white text-sm sm:text-base font-semibold">Smart Calculator</span>
+            <div class="flex gap-2">
+                <button id="themetoggle" class="text-xs bg-blue-500 hover:bg-blue-600 p-2 rounded text-white transition">🌗 Theme</button>
+                <button id="powerbtn" class="text-xs sm:text-sm bg-green-500 px-2 py-1 rounded text-white transition hover:scale-105 hover:bg-green-600">ON</button>
+            </div>
+        </div>
+
+        <input type="text" id="display" class="w-full text-right text-gray-900 dark:text-white text-xl sm:text-2xl bg-gray-200 dark:bg-gray-700 p-3 sm:p-4 rounded-lg mb-4" disabled>
+
+        <div class="grid grid-cols-4 gap-3 sm:gap-4">
+            <button class="btn bg-red-500 text-white">AC</button>
+            <button class="btn bg-yellow-500 text-white">%</button>
+            <button class="btn bg-purple-500 text-white">⌫</button>
+            <button class="btn bg-blue-500 text-white">/</button>
+
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn bg-blue-500 text-white">*</button>
+
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn bg-blue-500 text-white">-</button>
+
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn bg-blue-500 text-white">+</button>
+
+            <button class="btn col-span-2">0</button>
+            <button class="btn">.</button>
+            <button class="btn text-green-500 font-bold" id="equal">=</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
