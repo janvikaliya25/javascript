@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricity Bill</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-4">
+  <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-4">
+    <h2 class="text-center text-xl font-semibold bg-gray-700 text-white py-3 rounded-md mb-4">ELECTRICITY eBILL: Feb-Mar, 25</h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <!-- coustomer info -->
+      <div class="space-y-2 text-sm md:text-base">
+
+        <div class="space-y-2 text-sm md:text-base">
+          <div>
+            <label class="block font-semibold">Name:</label>
+            <input type="text" class="w-full border p-1 rounded" placeholder="Enter name" />
+          </div>
+          <div>
+            <label class="block font-semibold">Address:</label>
+            <input type="text" class="w-full border p-1 rounded" placeholder="Enter address" />
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block font-semibold">Taluka:</label>
+              <input type="text" class="w-full border p-1 rounded" placeholder="Enter Taluka" />
+            </div>
+            <div>
+              <label class="block font-semibold">District:</label>
+              <input type="text" class="w-full border p-1 rounded" placeholder="Enter District" />
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-semibold">FEEDER CD:</label>
+            <input type="text" class="w-full border p-1 rounded" />
+          </div>
+          <div>
+            <label class="block font-semibold">ENSUS CD:</label>
+            <input type="text" class="w-full border p-1 rounded" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Info -->
+      <div>
+        <table class="w-full border text-sm">
+          <tbody>
+            <tr class="bg-gray-200">
+              <td colspan="4" class="border px-2 py-1">Sub-Division Office</td>
+              <td colspan="2" class="border px-2 py-1">Gadhada-ROAD</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="border px-2 py-1">Root Code</td>
+              <td colspan="2" class="border px-2 py-1">577577</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="border px-2 py-1">Bill No</td>
+              <td colspan="2" id="billNo" class="border px-2 py-1">---</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="border px-2 py-1">Bill Date</td>
+              <td colspan="2" id="billDate" class="border px-2 py-1">---</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="border px-2 py-1">Last Date Of Payment</td>
+              <td colspan="2" id="lastDate" class="border px-2 py-1">---</td>
+            </tr>
+            <tr class="bg-gray-100 font-semibold text-center">
+              <td class="border px-1 py-1">Tariff</td>
+              <td class="border px-1 py-1">Metor Code</td>
+              <td class="border px-1 py-1">H.P/K.W</td>
+              <td class="border px-1 py-1">Seasonal</td>
+              <td class="border px-1 py-1">Days</td>
+              <td class="border px-1 py-1">S.D</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border px-1 py-1">RGPU</td>
+              <td class="border px-1 py-1">A</td>
+              <td class="border px-1 py-1">1.00</td>
+              <td class="border px-1 py-1">-</td>
+              <td class="border px-1 py-1">0</td>
+              <td class="border px-1 py-1">539.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Middle Section -->
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+      <!-- Meter Info -->
+      <div>
+        <table class="w-full border text-sm">
+          <tbody>
+            <tr class="bg-gray-200 font-semibold text-center">
+              <td colspan="2" class="border px-2 py-1">Customer No.</td>
+              <td colspan="4" class="border px-2 py-1">Meter No.</td>
+            </tr>
+            <tr class="text-center">
+              <td colspan="2" class="border px-2 py-1">1234567890</td>
+              <td colspan="4" class="border px-2 py-1">255667</td>
+            </tr>
+            <tr class="text-center">
+              <td colspan="2" class="border px-2 py-1">Phase</td>
+              <td colspan="2" class="border px-2 py-1">Meter Status</td>
+              <td colspan="2" class="border px-2 py-1">Max. Demand</td>
+            </tr>
+            <tr class="text-center">
+              <td colspan="2" class="border px-2 py-1">-</td>
+              <td colspan="2" class="border px-2 py-1">-</td>
+              <td colspan="2" class="border px-2 py-1">0.00</td>
+            </tr>
+            <tr class="bg-gray-100 text-center">
+              <td colspan="2"></td>
+              <td class="border px-1 py-1">Active</td>
+              <td class="border px-1 py-1">IMP</td>
+              <td class="border px-1 py-1">Reactive/Night</td>
+              <td class="border px-1 py-1">EXP</td>
+            </tr>
+            <tr class="text-center">
+              <td colspan="2" class="border px-1 py-1 font-semibold">Present Reading</td>
+              <td class="border px-1 py-1">15285</td>
+              <td class="border px-1 py-1">0</td>
+              <td class="border px-1 py-1">0</td>
+              <td class="border px-1 py-1">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Charges Info -->
+      <div>
+        <table class="w-full border text-sm">
+          <tbody>
+            <tr class="bg-gray-200 font-semibold text-center">
+              <td class="border px-1 py-1">Sr.No</td>
+              <td colspan="4" class="border px-1 py-1">Charges Details</td>
+              <td class="border px-1 py-1">₹</td>
+            </tr>
+            <tr>
+              <td class="border px-1 py-1 text-center">1</td>
+              <td colspan="4" class="border px-1 py-1">Fixed Charges</td>
+              <td class="border px-1 py-1"><input type="number" id="a" class="w-full border p-1" oninput="calculate()"></td>
+            </tr>
+            <tr>
+              <td class="border px-1 py-1 text-center">2</td>
+              <td colspan="4" class="border px-1 py-1">Energy Charges</td>
+              <td class="border px-1 py-1"><input type="number" id="b" class="w-full border p-1" oninput="calculate()"></td>
+            </tr>
+            <tr>
+              <td class="border px-1 py-1 text-center">3</td>
+              <td colspan="4" class="border px-1 py-1">Ujala Charges</td>
+              <td class="border px-1 py-1"><input type="number" id="c" class="w-full border p-1" oninput="calculate()"></td>
+            </tr>
+            <tr>
+              <td class="border px-1 py-1 text-center">4</td>
+              <td colspan="2" class="border px-1 py-1">Total Units</td>
+              <td colspan="2" id="tu" class="border px-1 py-1 text-center">-</td>
+              <td class="border px-1 py-1">
+                <input type="number" id="d" class="w-full border p-1" oninput="calculate()">
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-1 py-1 text-center">5</td>
+              <td colspan="4" class="border px-1 py-1">Fuel Charges (5 ₹/unit)</td>
+              <td class="border px-1 py-1" id="pr"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Total Section -->
+    <div class="overflow-x-auto mt-4">
+      <table class="w-full border text-sm text-center">
+        <thead class="bg-gray-100 font-semibold">
+          <tr>
+            <th class="border px-1 py-1">Total</th>
+            <th class="border px-1 py-1">CGST (5%)</th>
+            <th class="border px-1 py-1">SGST (5%)</th>
+            <th class="border px-1 py-1">Total GST</th>
+            <th class="border px-1 py-1">Total Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="ttl" class="border px-1 py-1"></td>
+            <td id="cgst" class="border px-1 py-1"></td>
+            <td id="sgst" class="border px-1 py-1"></td>
+            <td id="igst" class="border px-1 py-1"></td>
+            <td id="am" class="border px-1 py-1 font-semibold"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
