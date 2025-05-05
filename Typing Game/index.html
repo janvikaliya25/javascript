@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,4 +54,64 @@
     </div>
 </body>
 <script src="script.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Speed Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+    .game-container {
+      text-align: center;
+      background: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    .word {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+    input {
+      font-size: 1.5rem;
+      padding: 5px;
+      text-align: center;
+    }
+    .stats {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Typing Speed Game</h1>
+    <div id="word" class="word">Click "Start" to play</div>
+    <input type="text" id="input" placeholder="Type here" disabled />
+    <div class="stats">
+      Time: <span id="time">60</span>s | Score: <span id="score">0</span>
+    </div>
+    <button id="start">Start Game</button>
+    <button id="restart" style="display:none;">Restart</button>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
